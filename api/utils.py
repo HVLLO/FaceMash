@@ -13,7 +13,7 @@ def authenticated_jwt(email, password, request):
     This function create JWT for user if user exist,
 
     return: dictionary with info JWT
-    return: dictionary with info
+    return: dictionary with info about error
 
     :param email:
     :param password:
