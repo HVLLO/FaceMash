@@ -50,3 +50,4 @@ class User(AbstractBaseUser, PermissionsMixin):
         :return: Short name of user
         """
         return self.first_name
+
