@@ -29,7 +29,7 @@ class User(AbstractBaseUser, PermissionsMixin):
                                blank=True, null=True,
                                default="/static/img/avatar/avatar.png")
 
-    object = UserManager()
+    objects = UserManager()
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ['username']

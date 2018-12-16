@@ -10,8 +10,19 @@ class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'email', 'date_joined',
-                  'first_name', 'last_name', 'password')
+                  'first_name', 'last_name', 'username',
+                  'password')
         extra_kwargs = {'password': {'write_only': True}}
+
+    def create(self, validated_data):
+        user = User.objects.create(
+            email=validated_data['email'],
+            username=validated_data['username'],
+        )
+        user.set_password(validated_data['password'])
+        user.save()
+
+        return user
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -19,5 +30,14 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'user', 'title',
+        fields = ('id', 'author', 'title',
                   'body')
+
+
+class LikeSerializer(serializers.ModelSerializer):
+    created = serializers.ReadOnlyField
+
+    class Meta:
+        model = Like
+        fields = ('id', 'user', 'post',
+                  'created')
