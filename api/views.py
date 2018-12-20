@@ -54,15 +54,15 @@ class DeletePostAPIView(DestroyAPIView):
     queryset = Post.objects.all()
 
 
+#
+# TODO: Create API For Likes, CREATE "CRUD"
+class CreateLikeAPIView(CreateAPIView):
+    permission_classes = (IsAuthenticated, )
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+
+
+# TODO: This curl request for test auth API
 """
 curl -H "Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTU0NDk5MTY5NCwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.6eaOnDftRh8pTEnZPho4BTUA2fQnqocvqCBsXf7FaxU" http://localhost:8000/api/v1/list/post/
 """
-
-
-# TODO: Create API For add and delete likes
-class LikeCreateAPIView(APIView):
-    permission_classes = (IsAuthenticated, )
-
-    @staticmethod
-    def post(request, pk, *args, **kwargs):
-        post = get_object_or_404(Post, pk=pk)
