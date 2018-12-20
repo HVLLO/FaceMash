@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
-from account.models import User
-from post.models import Post
+from api.account.models import User
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -23,16 +22,3 @@ class UserProfileSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
-
-
-class PostSerializer(serializers.ModelSerializer):
-    date_joined = serializers.ReadOnlyField
-
-    class Meta:
-        model = Post
-        fields = ('id', 'author', 'title',
-                  'body', 'likes',)
-
-    def check_is_like(self) -> bool:
-        pass
-

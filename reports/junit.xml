@@ -1,0 +1,2 @@
+<testsuite errors="1" failures="0" name="Django Project Tests" skips="0" tests="1" time="0.002"><testcase classname="api.tests.TestAPIUser" name="test_user_create_profile" time="0.000118"><error message="test_user_create_profile() missing 1 required positional argument: 'self'" type="builtins.TypeError">TypeError: test_user_create_profile() missing 1 required positional argument: 'self'
+</error></testcase></testsuite>
