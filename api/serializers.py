@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from account.models import User
-from post.models import Post, Like
+from post.models import Post
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
@@ -31,14 +31,8 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = ('id', 'author', 'title',
-                  'body')
+                  'body', 'likes',)
 
+    def check_is_like(self) -> bool:
+        pass
 
-# TODO: Change this
-class LikeSerializer(serializers.ModelSerializer):
-    created = serializers.ReadOnlyField
-
-    class Meta:
-        model = Like
-        fields = ('id', 'user', 'post',
-                  'created')
