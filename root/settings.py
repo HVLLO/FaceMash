@@ -41,6 +41,10 @@ INSTALLED_APPS = [
     'rest_framework',
 ]
 
+INSTALLED_APPS += [
+    'django_jenkins'
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -78,8 +82,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'facemash',
-        'USER': 'hvllo',
-        'PASSWORD': 'mypass',
+        'USER': 'postgres',
+        'PASSWORD': 'Pass12345',
         'PORT': '5432',
         'HOST': 'localhost',
     }
@@ -132,4 +136,13 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
+
+JENKINS_TASK = (
+    'django_jenkins.tasks.run_pylint',
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+    'django_jenkins.tasks.with_coverage',
+    'django_jenkins.tasks.django_tests',
+)

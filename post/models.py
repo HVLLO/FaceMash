@@ -1,13 +1,14 @@
 from django.db import models
 
-from account.models import User
+from root.settings import AUTH_USER_MODEL
 
 
 class Post(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='post_user')
+    author = models.ForeignKey(AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='post_user')
     title = models.CharField(max_length=99)
     body = models.TextField(max_length=500)
     publish_date = models.DateTimeField(auto_now_add=True)
+    # likes = models.ManyToManyField(AUTH_USER_MODEL, related_name='post_like', blank=True)
 
     @property
     def publish(self):
@@ -15,9 +16,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-
-class Like(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='like_user')
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='like_post')
-    created = models.DateTimeField(auto_now_add=True)
