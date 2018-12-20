@@ -24,6 +24,7 @@ class UpdateUserAPIView(UpdateAPIView):
 class CreatePostAPIView(CreateAPIView):
     permission_classes = (IsAuthenticated,)
     serializer_class = PostSerializer
+    queryset = Post.objects.all()
 
 
 class UpdatePostAPIView(UpdateAPIView):
@@ -46,6 +47,22 @@ class DetailPostAPIView(APIView):
         return Response(data=serializer.data)
 
 
+# TODO: Create URL's for this class
+class DeletePostAPIView(DestroyAPIView):
+    permission_classes = (IsAuthenticated, )
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+
+
 """
-curl -H "Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTU0NDk4NDM2NiwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.NMPHAYv1khEJfH5eC-88G36jX9r7iGbcjQzvZI5NPTI" http://localhost:8000/api/v1/list/post/
+curl -H "Authorization: JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImFkbWluQGdtYWlsLmNvbSIsImV4cCI6MTU0NDk5MTY5NCwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20ifQ.6eaOnDftRh8pTEnZPho4BTUA2fQnqocvqCBsXf7FaxU" http://localhost:8000/api/v1/list/post/
 """
+
+
+# TODO: Create API For add and delete likes
+class LikeCreateAPIView(APIView):
+    permission_classes = (IsAuthenticated, )
+
+    @staticmethod
+    def post(request, pk, *args, **kwargs):
+        post = get_object_or_404(Post, pk=pk)

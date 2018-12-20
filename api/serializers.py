@@ -34,6 +34,7 @@ class PostSerializer(serializers.ModelSerializer):
                   'body')
 
 
+# TODO: Change this
 class LikeSerializer(serializers.ModelSerializer):
     created = serializers.ReadOnlyField
 
