@@ -8,15 +8,6 @@ from django.utils.translation import ugettext_lazy as _
 from .manager import UserManager
 
 
-def upload_location_avatar(instance):
-    """
-    For upload avatar
-    :param instance:
-    :return: path to save avatar
-    """
-    return f'{instance.username}/avatar/'
-
-
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_("email addresses"), unique=True)
     username = models.CharField(_("user name"), max_length=30, blank=True)
