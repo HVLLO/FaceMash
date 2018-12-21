@@ -18,9 +18,14 @@ from django.urls import path, include
 
 from rest_framework_jwt.views import obtain_jwt_token, verify_jwt_token
 
+
+apipatterns = [
+    path('', include('api.post.urls'))
+]
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/post/', include('api.post.urls')),
+    path('api/v1/', include(apipatterns)),
     path('api/v1/user/', include('api.account.urls')),
 ]
 

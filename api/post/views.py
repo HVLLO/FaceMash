@@ -1,46 +1,12 @@
-from django.shortcuts import get_object_or_404
-
-from rest_framework.views import APIView
-from rest_framework.permissions import IsAuthenticated
-from rest_framework.response import Response
-from rest_framework import status
-from rest_framework.generics import (CreateAPIView, UpdateAPIView,
-                                     ListAPIView, DestroyAPIView)
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.viewsets import ModelViewSet
 
 from .serializers import PostSerializer
 from .models import Post
+from api.like.mixins import LikedMixin
 
 
-class CreatePostAPIView(CreateAPIView):
+class PostAPIViewSet(LikedMixin, ModelViewSet):
     permission_classes = (IsAuthenticated,)
     serializer_class = PostSerializer
     queryset = Post.objects.all()
-
-
-class UpdatePostAPIView(UpdateAPIView):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = PostSerializer
-    queryset = Post.objects.all()
-
-
-class ListPostAPIView(ListAPIView):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = PostSerializer
-    queryset = Post.objects.all()
-
-
-class DestroyPostAPIView(DestroyAPIView):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = PostSerializer
-    queryset = Post.objects.all()
-
-
-class DetailPostAPIView(APIView):
-
-    @staticmethod
-    def get(request, pk, *args, **kwargs):
-        post = get_object_or_404(Post, pk=pk)
-        serializer = PostSerializer(post)
-
-        return Response(data=serializer.data, status=status.HTTP_200_OK)
-

@@ -22,3 +22,7 @@ class UserProfileSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+    @staticmethod
+    def get_full_name(obj):
+        return obj.get_full_name()
