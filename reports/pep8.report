@@ -766,6 +766,7 @@ venv/lib/python3.7/site-packages/django/contrib/staticfiles/management/commands/
 api/account/manager.py:17:33: E201 whitespace after '('
 api/account/models.py:31:80: E501 line too long (84 > 79 characters)
 api/account/serializers.py:26:1: W391 blank line at end of file
+api/account/tests.py:14:1: W391 blank line at end of file
 api/account/views.py:14:80: E501 line too long (91 > 79 characters)
 api/account/migrations/0001_initial.py:18:80: E501 line too long (114 > 79 characters)
 api/account/migrations/0001_initial.py:19:80: E501 line too long (88 > 79 characters)

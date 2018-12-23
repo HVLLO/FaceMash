@@ -2,8 +2,8 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework import status
 
-from . import services
-from .serializers import FanSerializer
+from api.like import services
+from api.like.REST_API.serializers import FanSerializer
 
 
 class LikedMixin:

@@ -2,6 +2,7 @@ venv/lib/python3.7/site-packages/django/contrib/messages/__init__.py:1: [E] PYFL
 venv/lib/python3.7/site-packages/django/contrib/messages/__init__.py:1: [E] PYFLAKES:'django.contrib.messages.api.*' imported but unused
 venv/lib/python3.7/site-packages/django/contrib/messages/__init__.py:2: [E] PYFLAKES:'from django.contrib.messages.constants import *' used; unable to detect undefined names
 venv/lib/python3.7/site-packages/django/contrib/messages/__init__.py:2: [E] PYFLAKES:'django.contrib.messages.constants.*' imported but unused
+api/account/tests.py:3: [E] PYFLAKES:'api.account.models.User' imported but unused
 api/post/views.py:1: [E] PYFLAKES:'rest_framework.permissions.AllowAny' imported but unused
 api/like/admin.py:1: [E] PYFLAKES:'django.contrib.admin' imported but unused
 api/like/tests.py:1: [E] PYFLAKES:'django.test.TestCase' imported but unused

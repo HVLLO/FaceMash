@@ -1,9 +1,9 @@
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAuthenticated
 from rest_framework import viewsets
 
-from .serializers import PostSerializer
-from .models import Post
-from api.like.mixins import LikedMixin
+from api.post.REST_API.serializers import PostSerializer
+from api.post.models import Post
+from api.like.REST_API.mixins import LikedMixin
 
 
 class PostAPIViewSet(LikedMixin,

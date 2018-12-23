@@ -30,6 +30,6 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    path('api/token/auth/', jwt_views.TokenObtainPairView.as_view()),
-    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view()),
+    path('api/token/auth/', jwt_views.TokenObtainPairView.as_view(), name='obtain_jwt'),
+    path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='refresh_jwt'),
 ]

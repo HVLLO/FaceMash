@@ -1,6 +1,6 @@
 from rest_framework import routers
 
-from .views import PostAPIViewSet
+from api.post.REST_API.views import PostAPIViewSet
 
 
 # register router
