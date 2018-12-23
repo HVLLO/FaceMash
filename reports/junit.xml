@@ -1,0 +1,1 @@
+<testsuite errors="0" failures="0" name="Django Project Tests" skips="0" tests="1" time="0.050"><testcase classname="api.post.tests.TestAPIPost" name="test_when_user_create_post" time="0.005541" /></testsuite>
