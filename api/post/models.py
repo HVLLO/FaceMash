@@ -24,5 +24,6 @@ class Post(models.Model):
 
     @property
     def total_likes(self):
+        print(self.likes.count())
         return self.likes.count()
 

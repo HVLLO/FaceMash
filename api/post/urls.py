@@ -8,5 +8,3 @@ router = routers.DefaultRouter()
 router.register('post', PostAPIViewSet, base_name='post_router')
 
 urlpatterns = router.urls
-for i in router.urls:
-    print(i)
