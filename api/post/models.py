@@ -15,6 +15,9 @@ class Post(models.Model):
     publish_date = models.DateTimeField(auto_now_add=True)
     likes = GenericRelation(Like)
 
+    def __str__(self):
+        return self.title
+
     @property
     def publish(self):
         return self.publish_date
@@ -23,5 +26,3 @@ class Post(models.Model):
     def total_likes(self):
         return self.likes.count()
 
-    def __str__(self):
-        return self.title
