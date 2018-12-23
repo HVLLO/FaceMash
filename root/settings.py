@@ -142,15 +142,8 @@ REST_FRAMEWORK = {
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
 }
 
-JENKINS_TASK = (
-    'django_jenkins.tasks.run_pylint',
+JENKINS_TASKS = (
     'django_jenkins.tasks.run_pep8',
     'django_jenkins.tasks.run_pyflakes',
-    'django_jenkins.tasks.with_coverage',
-    'django_jenkins.tasks.django_tests',
+    'django_jenkins.tasks.run_sloccount'
 )
-
-
-JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=1)
-}
