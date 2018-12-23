@@ -8,7 +8,6 @@ class TestAPIUser(TestCase):
     def setUp(self):
         self.c = Client()
 
-    @staticmethod
     def test_user_create_profile(self):
         pass
 
