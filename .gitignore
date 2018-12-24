@@ -105,6 +105,3 @@ venv.bak/
 
 # JetBrains
 .idea/
-
-# Jenkins
-reports/
