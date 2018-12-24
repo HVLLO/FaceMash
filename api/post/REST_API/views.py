@@ -11,4 +11,3 @@ class PostAPIViewSet(LikedMixin,
     queryset = Post.objects.all()
     permission_classes = (IsAuthenticated,)
     serializer_class = PostSerializer
-

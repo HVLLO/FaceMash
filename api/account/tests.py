@@ -1,13 +1,13 @@
-from django.test import TestCase, Client
+from django.test import Client
 from django.urls import reverse
 
 from rest_framework import status
+from rest_framework.test import APITestCase
 
 from .models import User
 
 
-# TODO: This class must test API for CRUD User model
-class TestAPIUser(TestCase):
+class TestAPIUser(APITestCase):
     def setUp(self):
         self.c = Client()
 
