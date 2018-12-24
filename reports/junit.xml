@@ -1,1 +1,0 @@
-<testsuite errors="0" failures="0" name="Django Project Tests" skips="0" tests="2" time="0.024"><testcase classname="api.account.tests.TestAPIUser" name="test_user_create_profile" time="0.000073" /><testcase classname="api.post.tests.TestAPIPost" name="test_when_user_create_post" time="0.011360" /></testsuite>
