@@ -2,7 +2,7 @@
 FaceMash - it is a Technical Task for get offer from Starnavi company. 
 
 ## Installation
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all from requirements.txt
 
 
 ## Testing
