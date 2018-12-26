@@ -12,7 +12,7 @@ class LikedMixin:
     def like(self, request, pk=None):
         """
         likes 'obj'
-        :return:
+        :return: Response with status code 200
         """
         obj = self.get_object()
         services.add_like(obj, request.user)
@@ -22,11 +22,11 @@ class LikedMixin:
     def unlike(self, request, pk=None):
         """
         dislike 'obj'
-        :return:
+        :return: Response with status code 200
         """
         obj = self.get_object()
         services.remove_like(obj, request.user)
-        return Response()
+        return Response(status=status.HTTP_200_OK)
 
     @action(detail=True, methods=['GET'])
     def fans(self, request, pk=None):
