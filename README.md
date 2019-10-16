@@ -1,5 +1,6 @@
 [![GitHub license](https://img.shields.io/github/license/HALLOWe3n/FaceMash)](./LICENSE)
-https://img.shields.io/github/license/HALLOWe3n/FaceMash
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+
 
 # FaceMash
 FaceMash - it is a Technical Task for get offer from Starnavi company. 
