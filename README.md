@@ -1,4 +1,4 @@
-[![GitHub license]](./LICENSE)
+[![GitHub license](https://img.shields.io/github/license/spotify/scio.svg)](./LICENSE)
 
 # FaceMash
 FaceMash - it is a Technical Task for get offer from Starnavi company. 
